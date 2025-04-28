@@ -16,10 +16,10 @@ jobs:
       - name: push image
         id: push
         env:
-          IMAGE: ${{ job.build_scan.build.outputs.image }}
           RELEASE_TAG: ${{ github.ref_name }}
           REGISTRY: 10.89.2.2:5000/podinfo
         run: |
-          docker tag ${IMAGE} ${REGISTRY}:${RELEASE_TAG}
-          docker push ${REGISTRY}:${RELEASE_TAG}
+          RELEASE_IMAGE=${REGISTRY}:${RELEASE_TAG}
+          docker tag ${REGISTRY}:${GITHUB_SHA} ${RELEASE_IMAGE}
+          docker push ${RELEASE_IMAGE}
 
