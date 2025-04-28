@@ -1,0 +1,25 @@
+name: release
+
+on:
+  release:
+    types: ["released"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: push image
+        id: push
+        env:
+          IMAGE: ${{ job.build_scan.build.outputs.image }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY: 10.89.2.2:5000/podinfo
+        run: |
+          docker tag ${IMAGE} ${REGISTRY}:${RELEASE_TAG}
+          docker push ${REGISTRY}:${RELEASE_TAG}
+
