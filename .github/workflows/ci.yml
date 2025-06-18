@@ -7,6 +7,7 @@ on:
 
 permissions:
   security-events: write # Must have this to allow writing to Security Tab
+  contents: read 
       
 jobs:
   testing:
