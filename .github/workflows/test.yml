@@ -11,5 +11,5 @@ permissions:
       
 jobs:
   testing:
-    uses: huynaism/reusable-workflow/.github/workflows/test.yml@0.1.4
+    uses: huynaism/reusable-workflow/.github/workflows/test.yml@0.1.5
     secrets: inherit
