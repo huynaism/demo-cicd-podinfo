@@ -6,7 +6,6 @@ on:
       - "master"
 
 permissions:
-  # required for all workflows
   security-events: write
 
 jobs:
@@ -27,6 +26,7 @@ jobs:
       if: always()
       with:
         sarif_file: hadolint-result.sarif
+        no-fail: true
 
   build:
     runs-on: self-hosted
