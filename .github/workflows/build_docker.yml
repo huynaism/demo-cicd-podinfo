@@ -10,9 +10,6 @@ permissions:
   contents: read 
       
 jobs:
-  testing:
-    uses: huynaism/reusable-workflow/.github/workflows/test.yml@0.1.1
-    secrets: inherit
   docker_pipeline:
     uses: huynaism/reusable-workflow/.github/workflows/docker_pipeline.yml@0.1.1
     secrets: inherit

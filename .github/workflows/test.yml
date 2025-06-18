@@ -1,0 +1,15 @@
+name: test
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+#   security-events: write # Must have this to allow writing to Security Tab
+  contents: read 
+      
+jobs:
+  testing:
+    uses: huynaism/reusable-workflow/.github/workflows/test.yml@0.1.1
+    secrets: inherit
