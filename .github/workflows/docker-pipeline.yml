@@ -6,7 +6,8 @@ on:
       - "master"
 
 permissions:
-  contents: read
+  # required for all workflows
+  security-events: write
 
 jobs:
   hadolint_scan:
@@ -29,6 +30,8 @@ jobs:
 
   build:
     runs-on: self-hosted
+    needs:
+      - hadolint_scan
     steps:
       - name: Checkout
         uses: actions/checkout@v3
