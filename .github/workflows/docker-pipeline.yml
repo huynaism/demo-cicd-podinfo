@@ -20,13 +20,13 @@ jobs:
       with:
         output-file: hadolint-result.sarif
         format: sarif
+        no-fail: true
 
     - name: Upload linting results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v3
       if: always()
       with:
         sarif_file: hadolint-result.sarif
-        no-fail: true
 
   build:
     runs-on: self-hosted
