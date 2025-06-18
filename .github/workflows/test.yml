@@ -25,4 +25,5 @@ jobs:
             -Dsonar.organization=${{ secrets.SONAR_ORG_ID }}
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
             -Dsonar.verbose=true
+            -Dsonar.qualitygate.wait=true
  
