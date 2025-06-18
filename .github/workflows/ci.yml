@@ -1,0 +1,14 @@
+name: ci_pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  testing:
+    uses: huynaism/reusable-workflow/.github/workflows/test.yml@0.1.0
+    secrets: inherit
+  docker_pipeline:
+    uses: huynaism/reusable-workflow/.github/workflows/docker_pipeline.yml@0.1.0
+    secrets: inherit
