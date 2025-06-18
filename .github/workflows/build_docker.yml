@@ -11,5 +11,5 @@ permissions:
       
 jobs:
   docker_pipeline:
-    uses: huynaism/reusable-workflow/.github/workflows/docker_pipeline.yml@0.1.1
+    uses: huynaism/reusable-workflow/.github/workflows/docker_pipeline.yml@0.1.2
     secrets: inherit
