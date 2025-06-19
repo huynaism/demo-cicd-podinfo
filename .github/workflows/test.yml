@@ -1,4 +1,4 @@
-name: test
+name: pr_check
 
 on:
   pull_request:
@@ -11,5 +11,5 @@ permissions:
       
 jobs:
   testing:
-    uses: huynaism/reusable-workflow/.github/workflows/test.yml@e9e76e89ff6864a6dc2ae7ee83ce87ce23504643
+    uses: huynaism/reusable-workflow/.github/workflows/pr_check.yml@1.0.0
     secrets: inherit
